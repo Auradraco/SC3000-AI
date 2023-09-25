@@ -59,10 +59,12 @@ terminateState = '50'
 energyBudget = 287932
 
 shortestPath, shortestDistance, totalEC, curEC, nodeVisitedCount = UCS1(G, source, terminateState, energyBudget, EC, Coord, Dist)
+shortestPath1 = "S" + shortestPath[(1):shortestPath.index("50")] + "T"
 #print(shortestPath)
 
 if (shortestPath is not None):
     print(f"Shortest Path: {shortestPath}")
+    print(f"Shortest Path: {shortestPath1}") #to show source node as S and terminate state as T. 
     print(f"Shortest Distance: {shortestDistance}")
     print(f"Total Energy Cost: {totalEC}")
     print(f"Number of Nodes Visted: {nodeVisitedCount}")
