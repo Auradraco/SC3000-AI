@@ -1,9 +1,5 @@
 #importing libraries for use
 import json
-import networkx as nx
-import matplotlib.pyplot as plt
-import scipy as sp
-import queue
 import heapq
 
 
