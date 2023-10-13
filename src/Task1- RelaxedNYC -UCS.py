@@ -39,7 +39,7 @@ def ucs(source: str, dest: str, dist: dict, g: dict) -> PathInfo:
                 path_info = PathInfo()
                 path_info.path = "->".join(current_path)
                 path_info.dist = calc_path_distance(current_path, dist)
-                path_info.energy = "Not considered"
+                path_info.energy = "Not Applicable"
                 return path_info
 
             # Add paths for neighboring nodes into the priority queue
