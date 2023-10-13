@@ -2,19 +2,6 @@ from queue import PriorityQueue
 from misc import PathInfo, calc_path_distance
 
 def ucs(source: str, dest: str, dist: dict, g: dict) -> PathInfo:
-    """ Super simple UCS, no heuristics or anything. Just using known neighbour distances
-
-    Args:
-        source (str): Source node
-        dest (str): Destination node
-        dist (dict): Dictionary of distances between 2 nodes
-        g (dict): Dictionary of neighbors, given a node as its key
-
-    Returns:
-        PathInfo: Object containing all information needed to be printed
-    """
-
-    # Using a priority queue for ease of retrieving the current shortest path
     prio_queue = PriorityQueue()
 
     # Priority queue item is such: ( $path_taken: list )
