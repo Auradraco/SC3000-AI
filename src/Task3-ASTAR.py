@@ -1,8 +1,8 @@
 from queue import PriorityQueue
-from misc import PathInfo, h, calc_path_distance, calc_path_energy
+from misc import PathInfo, h, calc_path_distance, calc_path_energy, load_json_files
+from timeit import default_timer as timer
 
-
-def astar(source: str, dest: str, budget: int, coord: dict, cost: dict, dist: dict, g: dict, gamma: float = 1) -> PathInfo:
+def astar(source: str, dest: str, budget: int, coord: dict, cost: dict, dist: dict, g: dict, gamma: float =1) -> PathInfo:
     prio_queue = PriorityQueue()
 
     # priority queue item is a such: ( $energy_used: int, $path_taken: list )
@@ -46,3 +46,21 @@ def astar(source: str, dest: str, budget: int, coord: dict, cost: dict, dist: di
                     new_path.append(neighbour)
 
                     prio_queue.put((score, (new_energy, new_path)))
+
+
+coord, cost, dist, g = load_json_files()
+energyBudget = 287932
+
+#track computational time for search algorithm
+start_time = timer()
+path = astar('1', '50', energyBudget,coord, cost, dist, g)
+end_time = timer()
+
+print("time taken for A* algorithm: ", end_time- start_time)
+
+shortestPath = "S" + path.path[(1):path.path.index("50")] + "T"
+print(f"Shortest path: {path.path}")
+print(f"Shortest path: {shortestPath}")
+print(f"Shortest distance: {path.dist}")
+print(f"Total energy cost: {path.energy}\n")
+
