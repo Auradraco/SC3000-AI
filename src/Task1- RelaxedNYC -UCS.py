@@ -53,3 +53,13 @@ def ucs(source: str, dest: str, dist: dict, g: dict) -> PathInfo:
                 prio_queue.put((score, new_path))
 
     return PathInfo()
+
+coord, cost, dist, g = load_json_files()
+
+
+path = ucs('1', '50', dist, g)
+shortestPath = "S" + path.path[(1):path.path.index("50")] + "T"
+print(f"Shortest path: {path.path}")
+print(f"Shortest path: {shortestPath}") #shows source node as "S" and terminate state as "T" in path taken 
+print(f"Shortest distance: {path.dist}")
+print(f"Total energy cost: {path.energy}\n") #no energy constraint due to question nature
