@@ -4,13 +4,13 @@ import heapq
 
 
 #importing json files as dictionaries for use
-with open(r"C:\Users\draco\OneDrive - Nanyang Technological University\NTU Y3\SC3000 Artifical Intelligence\Lab Assignment\Data Files\G.json") as a:
+with open(r"dataFiles/G.json") as a:
   G = json.load(a)
-with open(r"C:\Users\draco\OneDrive - Nanyang Technological University\NTU Y3\SC3000 Artifical Intelligence\Lab Assignment\Data Files\Dist.json") as b:
+with open(r"dataFiles/Dist.json") as b:
   Dist = json.load(b)
-with open(r"C:\Users\draco\OneDrive - Nanyang Technological University\NTU Y3\SC3000 Artifical Intelligence\Lab Assignment\Data Files\Cost.json") as c:
+with open(r"dataFiles/Cost.json") as c:
   EC = json.load(c)
-with open(r"C:\Users\draco\OneDrive - Nanyang Technological University\NTU Y3\SC3000 Artifical Intelligence\Lab Assignment\Data Files\Coord.json") as d:
+with open(r"dataFiles/Coord.json") as d:
   Coord = json.load(d)
 
 
