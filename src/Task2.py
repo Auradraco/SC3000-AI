@@ -1,7 +1,7 @@
 #importing libraries for use
 import json
 import heapq
-
+from timeit import default_timer as timer
 
 #importing json files as dictionaries for use
 with open(r"dataFiles/G.json") as a:
@@ -54,7 +54,12 @@ source = '1'
 terminateState = '50'
 energyBudget = 287932
 
+#track computational time for search algorithm
+start_time = timer()
 shortestPath, shortestDistance, totalEC, curEC, nodeVisitedCount = UCS1(G, source, terminateState, energyBudget, EC, Coord, Dist)
+end_time = timer()
+
+print("time taken for UCS algorithm: ", end_time- start_time)
 shortestPath1 = "S" + shortestPath[(1):shortestPath.index("50")] + "T"
 #print(shortestPath)
 
